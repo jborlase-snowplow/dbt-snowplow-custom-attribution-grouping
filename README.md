@@ -16,7 +16,10 @@ This repository serves to provide a way to run the [Snowplow dbt Attribution Pac
    ```
    vars:
      snowplow_attribution:
-      snowplow__attribution_groupings: ['channel','campaign']
+      snowplow__attribution_groupings: ['channel','campaign'] # Add to this array for any additional groupings
+   
+      snowplow__consider_all_page_views: false # Set to true if you want to do internal attribution
+      snowplow__consider_intrasession_channels: false # Set to true if you want to do internal attribution
    
    models:
     your_project_name:
