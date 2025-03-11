@@ -1,15 +1,25 @@
-Welcome to your new dbt project!
+**Disclaimer: This is not officially supported by Snowplow**
 
-### Using the starter project
+# Snowplow dbt Attribution Model with Custom Groupings
 
-Try running the following commands:
-- dbt run
-- dbt test
+This repository serves to provide a way to run the [Snowplow dbt Attribution Package]([url](https://docs.snowplow.io/docs/modeling-your-data/modeling-your-data-with-dbt/dbt-models/dbt-attribution-data-model/)) that allows you to modify the variables that the attribution is calculated for. By default the Snowplow model only calculates attribution for the Channel and Campaign fields - using this package you can configure this to any field which is available in your paths source table (by default your Snowplow Unified Views table).
 
+# Installation Instructions
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+1. Install and run the Snowplow Unified and Attribution package
+2. Copy and paste the macros within this repo under the macro root directory and add it to your own projects macro root directory where you have the attribution model installed
+3. Add the following variable and model configuration to your dbt_project.yml
+   ```
+   vars:
+     snowplow_attribution:
+      snowplow__attribution_groupings: ['channel','campaign']
+   
+   models:
+    your_project_name:
+      custom_attributions:
+        +schema: "derived"
+   ```
+4. Add any additional groupings you require to the array
+5. Copy the example model within this repository's root model folder to your own root model folder
+6. Rename the copied model and change the grouping variable on line 36
+
