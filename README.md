@@ -29,3 +29,8 @@ This repository serves to provide a way to run the [Snowplow dbt Attribution Pac
 4. Add any additional groupings you require to the array
 5. Copy the example model within this repository's root model folder to your own root model folder
 6. Rename the copied model and change the grouping variable on line 36
+
+## Limitations
+
+1. This will not work on Redshift or Spark currently
+2. Attributions are not added to the Attribution Overview macro
