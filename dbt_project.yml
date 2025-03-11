@@ -51,6 +51,9 @@ vars:
     snowplow__attribution_start_date: '2025-02-01'
 
     snowplow__attribution_groupings: ['channel','campaign','medium']
+
+    snowplow__consider_all_page_views: true
+    snowplow__consider_intrasession_channels: true
     
 models:
   custom_attribution_grouping_project:
