@@ -32,5 +32,5 @@ This repository serves to provide a way to run the [Snowplow dbt Attribution Pac
 
 ## Limitations
 
-1. This will not work on Redshift or Spark currently
+1. This will not work on Redshift currently
 2. Attributions are not added to the Attribution Overview macro
