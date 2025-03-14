@@ -52,8 +52,8 @@ vars:
 
     snowplow__attribution_groupings: ['channel','campaign','medium']
 
-    snowplow__consider_all_page_views: true
-    snowplow__consider_intrasession_channels: true
+    snowplow__consider_all_page_views: false
+    snowplow__consider_intrasession_channels: false
     
 models:
   custom_attribution_grouping_project:
